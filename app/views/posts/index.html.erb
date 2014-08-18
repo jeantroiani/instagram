@@ -5,6 +5,7 @@
 		<ul>
 			<li>
 				<%= post.title %>
+				<%=	image_tag post.image.url(:medium), class: 'uploaded-pic'%>
 			</li>
 		</ul>
 	<%end%>
