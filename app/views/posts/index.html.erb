@@ -1,0 +1,13 @@
+<%= button_to 'Create Post', new_post_path, method: :get %>
+
+<% if @posts.any? %>
+	<% @posts.each do |post| %>
+		<ul>
+			<li>
+				<%= post.title %>
+			</li>
+		</ul>
+	<%end%>
+		<%else%>
+		<p>No post added yet</p>
+<%end%>
