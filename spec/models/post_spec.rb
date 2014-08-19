@@ -13,7 +13,8 @@ RSpec.describe Post, :type => :model do
 		end
 
 		describe'with tags' do
-			let (:post) {Post.create(title: 'Brighton')}
+			let (:post) 	{Post.create(title: 'Brighton')}
+			let (:post_2) {Post.create(title: 'Brighton')}
 
 			it 'has one tag' do
 				post.tags_list=('#party')
@@ -29,6 +30,13 @@ RSpec.describe Post, :type => :model do
 			it 'will not accept tags duplicates in the same post' do
 				post.tags_list=('#wild #wild #party')
 				expect(post.tags.all.count).to eq(2)
+			end
+
+
+			it 'will not accept tags duplicates in different posts' do				
+				post.tags_list=		('#wild')
+				post_2.tags_list=	('#wild')
+				expect(Tag.all.count).to eq(1)
 			end
 		end	
 	end

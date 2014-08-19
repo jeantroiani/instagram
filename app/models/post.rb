@@ -16,7 +16,7 @@ has_and_belongs_to_many :tags
   def tags_list=(passed_tags)
   	return if passed_tags.empty?
       passed_tags.split(' ').uniq.each do|tag|
-  	 self.tags << Tag.create(text: tag)
+  	 self.tags << Tag.find_or_create_by(text: tag)
     end
   end
 
