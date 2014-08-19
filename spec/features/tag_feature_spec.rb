@@ -6,9 +6,10 @@ describe 'Tags' do
 		visit('/posts')
 		click_button('Create Post')
 		fill_in 'Title',	with: 'Brighton'
-		fill_in 'Tags',		with: '#weekend,#party'
+		fill_in 'Tags',		with: '#weekend #party'
 		click_button('Post')
 		expect(page).to have_content('Brighton')
-		expect(page).to have_content('#weekend,#party')
+		expect(page).to have_content('#weekend')
+		expect(page).to have_content('#party')
 	end
 end

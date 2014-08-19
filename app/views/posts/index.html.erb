@@ -4,11 +4,16 @@
 	<% @posts.each do |post| %>
 		<ul>
 			<li>
-				<%= post.title %>
 				<%=	image_tag post.image.url(:medium), class: 'uploaded-pic'%>
+				<br>
+				<%= post.title %>
+				<br>
+				<% (post.tags).each do|tag| %>
+					<%= tag.text %>
+				<% end %>
 			</li>
 		</ul>
 	<%end%>
-		<%else%>
-		<p>No post added yet</p>
+<%else%>
+	<p>No post added yet</p>
 <%end%>

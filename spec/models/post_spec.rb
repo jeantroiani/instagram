@@ -19,17 +19,17 @@ RSpec.describe Post, :type => :model do
 				post.tags_list=('#party')
 				expect(post.tags.first.text).to eq('#party')
 			end
-	
-
-			let (:post) {Post.create(title: 'Brighton')}
 
 			it 'has multiple tag' do
 				post.tags_list=('#party #wild')
 				expect(post.tags.first.text).to eq('#party')
 				expect(post.tags.last.text).to eq('#wild')
 			end
+			
+			it 'will not accept tags duplicates in the same post' do
+				post.tags_list=('#wild #wild #party')
+				expect(post.tags.all.count).to eq(2)
+			end
 		end	
-
-
 	end
 end
