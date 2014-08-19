@@ -9,7 +9,7 @@
 				<%= post.title %>
 				<br>
 				<% (post.tags).each do|tag| %>
-					<%= tag.text %>
+					<%= link_to tag.text, tag %>
 				<% end %>
 			</li>
 		</ul>
