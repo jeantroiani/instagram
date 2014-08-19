@@ -24,9 +24,9 @@ RSpec.describe Post, :type => :model do
 			let (:post) {Post.create(title: 'Brighton')}
 
 			it 'has multiple tag' do
-				post.tags_list=('#party','#wild')
+				post.tags_list=('#party #wild')
 				expect(post.tags.first.text).to eq('#party')
-				expect(post.tags.first.text).to eq('#wild')
+				expect(post.tags.last.text).to eq('#wild')
 			end
 		end	
 
