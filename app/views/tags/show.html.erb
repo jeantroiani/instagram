@@ -1,5 +1,7 @@
-<%= button_to 'Create Post', new_post_path, method: :get %>
 
-<div class="row">
-	<%= render @tag.posts %>
-</div>
+
+<% if @tag.posts.any? %>
+	<div class="row">
+		<%= render @tag.posts %>
+	</div>
+<%end %>

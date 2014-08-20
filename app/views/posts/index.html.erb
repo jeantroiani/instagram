@@ -1,5 +1,4 @@
-<%=  button_to 'Create Post' , new_post_path, class:"btn btn-primary", method: :get %>
-<br>
+
 <% if @posts.any? %>
 	<div class="row">
 		<%= render @posts %>

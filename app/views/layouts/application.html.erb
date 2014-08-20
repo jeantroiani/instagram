@@ -46,6 +46,7 @@
           </button>
           <a class="navbar-brand" href="#"></a>
         </div>
+        <%=  button_to 'Create Post' , new_post_path, class:"btn btn-primary create_post", method: :get %>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <div class="form-group">
@@ -59,6 +60,9 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
+
+
+
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
  <!--    <div class="jumbotron">
