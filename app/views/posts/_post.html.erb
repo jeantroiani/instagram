@@ -1,0 +1,14 @@
+<div class="col-md-4 post">
+	<p>
+		<%=	image_tag post.image.url(:medium), class: 'uploaded-pic'%>
+		<br>
+		<div class='post_title'>
+			<%= post.title %>
+		</div>
+		<% (post.tags).each do|tag| %>
+			<span class='post_tags'>
+				<%= link_to tag.text, tag %>
+			</span>
+		<% end %>
+	</p>
+</div>

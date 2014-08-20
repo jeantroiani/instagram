@@ -1,19 +1,9 @@
-<%= button_to 'Create Post', new_post_path, method: :get %>
-
+<%=  button_to 'Create Post' , new_post_path, class:"btn btn-primary", method: :get %>
+<br>
 <% if @posts.any? %>
-	<% @posts.each do |post| %>
-		<ul>
-			<li>
-				<%=	image_tag post.image.url(:medium), class: 'uploaded-pic'%>
-				<br>
-				<%= post.title %>
-				<br>
-				<% (post.tags).each do|tag| %>
-					<%= link_to tag.text, tag %>
-				<% end %>
-			</li>
-		</ul>
-	<%end%>
+	<div class="row">
+		<%= render @posts %>
+	</div>
 <%else%>
 	<p>No post added yet</p>
 <%end%>
