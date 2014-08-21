@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Post, :type => :model do
 
+before(:each)do 
+ user= User.create(email: 'digitalguest@gmail.com', password: '12345678', password_confirmation: '12345678')
+ login_as user
+end
+
+
 	context 'tags' do
 		describe'wit not tags' do
 			let (:post) {Post.create(title: 'Brighton')}

@@ -33,6 +33,8 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'warden'
+
 group :development, :test do
 
 gem 'rspec-rails'

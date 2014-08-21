@@ -2,6 +2,11 @@ require 'rails_helper'
 
 describe 'post' do
 	
+before(:each)do 
+ user= User.create(email: 'digitalguest@gmail.com', password: '12345678', password_confirmation: '12345678')
+ login_as user
+end
+	
 	context 'no post showing' do
 		it 'informs that no post has been created' do
 		visit('/posts')
