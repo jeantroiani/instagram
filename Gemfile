@@ -31,6 +31,8 @@ gem 'autoprefixer-rails'
 
 gem 'spring',        group: :development
 
+gem 'devise'
+
 group :development, :test do
 
 gem 'rspec-rails'
@@ -40,6 +42,7 @@ gem 'capybara'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 gem 'aws-sdk', '~> 1.5.7'
+
 
 end
 
