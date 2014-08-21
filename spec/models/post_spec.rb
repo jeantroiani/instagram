@@ -8,8 +8,8 @@ before(:each)do
 end
 
 
-	context 'tags' do
-		describe'wit not tags' do
+	context 'post' do
+		describe'with no tags' do
 			let (:post) {Post.create(title: 'Brighton')}
 
 			it 'has no tags' do

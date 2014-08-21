@@ -43,5 +43,17 @@ end
 			expect(page).to have_css('img.uploaded-pic')
 		end
 	end
+
+	context 'Create a post with location' do
+		it 'shows a form a allows user to write the location' do
+			visit('/posts')
+			click_button('Create Post')
+			fill_in 'Title', with: 'Hello Madness'
+			fill_in 'Location', with: 'Brighton'
+			click_link('Brighton')
+			expect(page).to have_css('gm-style')
+		end
+	end
+
 end
 
