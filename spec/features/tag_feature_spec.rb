@@ -1,19 +1,11 @@
 require 'rails_helper'
 
 describe 'Tags' do
-
 	let(:user) do User.create(
 			email:'test@test.com',
 			password: '12345678',
 			password_confirmation: '12345678'
 		)end
-
-
-	before(:each)do 
- user= User.create(email: 'digitalguest@gmail.com', password: '12345678', password_confirmation: '12345678')
- login_as user
-end
-
 	
 	it 'has tags with post' do
 		login_as user
@@ -35,7 +27,6 @@ end
 		click_link('#food', match: :first)
 		expect(page).to_not have_content('#arepas')
 		expect(page).to have_content('#food', count: 2)
-
 	end
 
 end

@@ -33,7 +33,6 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
-
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 

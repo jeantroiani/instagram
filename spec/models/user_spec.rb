@@ -8,6 +8,7 @@ RSpec.describe User, :type => :model do
  	password_confirm:'12345678'
 end
 
- 
+ 	
+
 
 end
