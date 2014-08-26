@@ -33,12 +33,9 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
-<<<<<<< HEAD
+
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-=======
-gem 'warden'
->>>>>>> development
 
 group :development, :test do
 
