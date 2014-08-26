@@ -82,12 +82,13 @@ describe 'post' do
 			click_button('Post')
 			page.find('button.stripe-button-el').click
 			Capybara.within_frame 'stripe_checkout_app' do
-   		fill_in 'Email', :with => 'persona@example.com'
-    	fill_in "Card number", :with => "4242424242424242"
-    	fill_in 'CVC', :with => '123'
-    	fill_in 'MM / YY', :with => '11/14'
-    	click_button 'Pay $5.00'
-  end
+	   		fill_in 'Email', :with => 'persona@example.com'
+	    	fill_in "Card number", :with => "4242424242424242"
+	    	fill_in 'CVC', :with => '123'
+	    	fill_in 'MM / YY', :with => '11/14'
+	    	click_button 'Pay $5.00'
+  		end
+    	expect(current_path) == posts_path
 		end
 	end
 
