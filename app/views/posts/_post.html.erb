@@ -5,10 +5,27 @@
 		<div class='post_title'>
 			<%= post.title %>
 		</div>
+<%= form_tag post_charges_path(post) do %>
+  <article>
+    <label class="amount">
+      <span>Amount: <%=post.price%> </span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Payment Details"
+          data-amount=<%=post.price%>></script>
+<% end %>
+
 		<% (post.tags).each do|tag| %>
+
 			<span class='post_tags'>
 				<%= link_to tag.text, tag %>
 			</span>
 		<% end %>
 	</p>
 </div>
+
+
+

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'database_cleaner'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
@@ -35,8 +35,10 @@ gem 'devise'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development, :test do
+gem 'launchy'
 
 gem 'warden'
 
@@ -47,6 +49,8 @@ gem 'capybara'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 gem 'aws-sdk', '~> 1.5.7'
+
+gem 'poltergeist'
 
 
 end

@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post=Post.create(params[:post].permit(:title, :image, :tags_list))
+		@post=Post.create(params[:post].permit(:title, :image, :tags_list, :price))
 		redirect_to '/posts'
 	end
 	
