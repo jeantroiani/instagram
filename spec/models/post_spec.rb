@@ -2,8 +2,19 @@ require 'rails_helper'
 
 RSpec.describe Post, :type => :model do
 
+<<<<<<< HEAD
 	context 'tags' do
 		describe'with not tags' do
+=======
+before(:each)do 
+ user= User.create(email: 'digitalguest@gmail.com', password: '12345678', password_confirmation: '12345678')
+ login_as user
+end
+
+
+	context 'post' do
+		describe'with no tags' do
+>>>>>>> development
 			let (:post) {Post.create(title: 'Brighton')}
 
 			it 'has no tags' do

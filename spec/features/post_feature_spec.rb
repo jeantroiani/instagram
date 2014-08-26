@@ -4,6 +4,11 @@ describe 'post' do
 
 	
 	
+before(:each)do 
+ user= User.create(email: 'digitalguest@gmail.com', password: '12345678', password_confirmation: '12345678')
+ login_as user
+end
+	
 	context 'no post showing' do
 		it 'informs that no post has been created' do
 		visit('/posts')
@@ -52,5 +57,17 @@ describe 'post' do
 			expect(page).to have_css('img.uploaded-pic')
 		end
 	end
+
+	context 'Create a post with location' do
+		it 'shows a form a allows user to write the location' do
+			visit('/posts')
+			click_button('Create Post')
+			fill_in 'Title', with: 'Hello Madness'
+			fill_in 'Location', with: 'Brighton'
+			click_link('Brighton')
+			expect(page).to have_css('gm-style')
+		end
+	end
+
 end
 

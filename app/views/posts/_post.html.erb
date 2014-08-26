@@ -5,6 +5,7 @@
 		<div class='post_title'>
 			<%= post.title %>
 		</div>
+		<span>@<%= link_to 'Location', post.location, post_location_path %></span>
 		<% (post.tags).each do|tag| %>
 			<span class='post_tags'>
 				<%= link_to tag.text, tag %>
