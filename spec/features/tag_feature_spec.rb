@@ -1,8 +1,14 @@
 require 'rails_helper'
 
 describe 'Tags' do
+	let(:user) do User.create(
+			email:'test@test.com',
+			password: '12345678',
+			password_confirmation: '12345678'
+		)end
 	
 	it 'has tags with post' do
+		login_as user
 		visit('/posts')
 		click_button('Create Post')
 		fill_in 'Title',	with: 'Brighton'
@@ -18,9 +24,9 @@ describe 'Tags' do
 		post_2=	Post.create(title:'London', 	tags_list:'#food'	)
 		post_3=	Post.create(title:'Caracas', 	tags_list:'#arepas')
 		visit('/posts')
-		click_link('#Brighton')
+		click_link('#food', match: :first)
 		expect(page).to_not have_content('#arepas')
-		expect(page).to_not have_content('#food').exactly(2).times
+		expect(page).to have_content('#food', count: 2)
 	end
 
 end

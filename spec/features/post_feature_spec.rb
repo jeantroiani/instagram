@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe 'post' do
+
+	
 	
 	context 'no post showing' do
 		it 'informs that no post has been created' do
@@ -18,7 +20,13 @@ describe 'post' do
 	end
 
 	context 'Creating a post' do
+	let (:user) do User.create(
+		email: 'test@test.com',
+		password: '12345678',
+		password_confirmation: '12345678')
+	end
 		it 'shows a form to filled by the user' do
+			login_as user
 			visit('/posts')
 			click_button('Create Post')
 			fill_in 'Title', with: 'Hello Brighton'
@@ -28,7 +36,13 @@ describe 'post' do
 	end
 
 	context 'Create a post with a picture' do
+			let (:user) do User.create(
+		email: 'test@test.com',
+		password: '12345678',
+		password_confirmation: '12345678')
+		end
 		it 'shows a form that allows the user to post with files' do
+			login_as user
 			visit('/posts')
 			click_button('Create Post')
 			fill_in 'Title', with: 'Hello Brighton'

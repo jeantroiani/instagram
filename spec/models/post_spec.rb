@@ -3,12 +3,20 @@ require 'rails_helper'
 RSpec.describe Post, :type => :model do
 
 	context 'tags' do
-		describe'wit not tags' do
+		describe'with not tags' do
 			let (:post) {Post.create(title: 'Brighton')}
 
 			it 'has no tags' do
 				post.tags_list= ''
 				expect(post.tags).to be_empty
+			end
+		end
+
+		describe 'has price' do
+			let (:post) {Post.create(title: 'Brighton', price: '500')}
+
+			it 'next to it, so clients can buy it , paying that amount' do
+				post.price= '500'
 			end
 		end
 
