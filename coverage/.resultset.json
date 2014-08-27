@@ -402,6 +402,12 @@
         null,
         null
       ],
+      "/Users/jeantroiani/Desktop/instagram/config/initializers/pusher.rb": [
+        1,
+        null,
+        1,
+        1
+      ],
       "/Users/jeantroiani/Desktop/instagram/config/initializers/session_store.rb": [
         null,
         null,
@@ -434,6 +440,7 @@
       ],
       "/Users/jeantroiani/Desktop/instagram/config/routes.rb": [
         1,
+        null,
         1,
         null,
         null,
@@ -495,6 +502,8 @@
         null
       ],
       "/Users/jeantroiani/Desktop/instagram/app/models/user.rb": [
+        1,
+        null,
         1,
         null,
         null,
@@ -563,6 +572,7 @@
         13,
         null,
         null,
+        null,
         1,
         5,
         null,
@@ -570,6 +580,17 @@
         1,
         5,
         5,
+        5,
+        5,
+        null,
+        null,
+        null,
+        null,
+        1,
+        5,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -584,6 +605,7 @@
         null
       ],
       "/Users/jeantroiani/Desktop/instagram/app/models/post.rb": [
+        1,
         1,
         1,
         null,
@@ -623,6 +645,6 @@
         null
       ]
     },
-    "timestamp": 1409073558
+    "timestamp": 1409143786
   }
 }

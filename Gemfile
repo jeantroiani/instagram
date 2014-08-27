@@ -37,6 +37,8 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem "codeclimate-test-reporter", group: :test, require: nil
 
+gem 'pusher'
+
 group :development, :test do
 gem 'launchy'
 
